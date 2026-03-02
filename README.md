@@ -1,21 +1,17 @@
 # 🍕 Pizza Sales & Operational Analytics Project
 
-**Source: Maven Analytics Challenge – Pizza Dataset**
+**Source:** [Maven Analytics Challenge – Pizza Dataset](https://www.kaggle.com/datasets/neethimohan/maven-pizza-challenge-dataset)
 
 Project Context – Maven Analytics Challenge
 
 This project consolidates transactional, product, and order-level data from the Maven Analytics Pizza Challenge dataset to produce actionable insights on sales performance, product mix, and temporal ordering patterns.
 
 Why it matters / So What:
-
-Revenue drivers: Reveals which pizzas drive revenue and which are underperforming → helps optimize product mix.
-
-Temporal trends: Shows ordering patterns by time → informs staffing, promotions, and operational planning.
-
-Concentration risks: Highlights dependency on top SKUs → supports risk mitigation and diversification.
+- Revenue drivers: Reveals which pizzas drive revenue and which are underperforming → helps optimize product mix.
+- Temporal trends: Shows ordering patterns by time → informs staffing, promotions, and operational planning.
+- Concentration risks: Highlights dependency on top SKUs → supports risk mitigation and diversification.
 
 Audience
-
 Franchise managers, operations analysts, and business decision-makers seeking actionable, data-driven insights.
 
 ## 📊 Topline Metrics
