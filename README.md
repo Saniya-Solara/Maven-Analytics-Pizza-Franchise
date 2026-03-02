@@ -11,7 +11,7 @@ Why it matters / So What:
 - Temporal trends: Shows ordering patterns by time → informs staffing, promotions, and operational planning.
 - Concentration risks: Highlights dependency on top SKUs → supports risk mitigation and diversification.
 
-Audience
+Audience:
 Franchise managers, operations analysts, and business decision-makers seeking actionable, data-driven insights.
 
 ## 📊 Topline Metrics
@@ -79,19 +79,19 @@ Daily revenue shows steady growth with periodic spikes. **So What?** Spikes like
 
 ## 🛠️ Technical Notes & SQL Techniques (Merged)
 
-Temporal Peak Analysis: Used DATEPART(HOUR, time) to bucket 21,000+ orders into hourly slots, identifying a 74% concentration of sales between 12:00 and 19:00. Learned the SSMS syntax (DATEPART) as opposed to HOUR() in MySQL.
+- Temporal Peak Analysis: Used DATEPART(HOUR, time) to bucket 21,000+ orders into hourly slots, identifying a 74% concentration of sales between 12:00 and 19:00. Learned the SSMS syntax (DATEPART) as opposed to HOUR() in MySQL.
 
-Menu vs. Sales Metrics: COUNT(*) on pizzas counts menu SKUs; for sold quantities, aggregation must occur on order_details. Clarifies what “Most Common Pizza Size” really measures.
+- Menu vs. Sales Metrics: COUNT(*) on pizzas counts menu SKUs; for sold quantities, aggregation must occur on order_details. Clarifies what “Most Common Pizza Size” really measures.
 
-Financial Growth Tracking: Implemented Common Table Expressions (CTEs) and Window Functions (SUM() OVER) to calculate cumulative daily revenue efficiently without self-joins. Learned how CTEs simplify multi-step queries.
+- Financial Growth Tracking: Implemented Common Table Expressions (CTEs) and Window Functions (SUM() OVER) to calculate cumulative daily revenue efficiently without self-joins. Learned how CTEs simplify multi-step queries.
 
-Top-N Analysis: Used TOP N (SQL Server equivalent of LIMIT) to get highest revenue or quantity SKUs. Learned the SSMS-specific syntax for quick top-N queries.
+- Top-N Analysis: Used TOP N (SQL Server equivalent of LIMIT) to get highest revenue or quantity SKUs. Learned the SSMS-specific syntax for quick top-N queries.
 
-Revenue Partitioning by Category: ROW_NUMBER() OVER (PARTITION BY pt.category ORDER BY SUM(od.quantity * p.price) DESC) to rank pizzas per category, enabling top 3 insights. Learned ranking within partitions for granular insights.
+- Revenue Partitioning by Category: ROW_NUMBER() OVER (PARTITION BY pt.category ORDER BY SUM(od.quantity * p.price) DESC) to rank pizzas per category, enabling top 3 insights. Learned ranking within partitions for granular insights.
 
-Date Aggregation: CAST(date AS DATE) ensures proper grouping by day in SSMS, replacing MySQL-style DATE(). Critical for temporal trends.
+- Date Aggregation: CAST(date AS DATE) ensures proper grouping by day in SSMS, replacing MySQL-style DATE(). Critical for temporal trends.
 
-JOINs & Aggregations: Multi-table joins (orders → order_details → pizzas → pizza_types) allow precise revenue and quantity aggregation without double-counting. Reinforced careful join order and groupings.
+- JOINs & Aggregations: Multi-table joins (orders → order_details → pizzas → pizza_types) allow precise revenue and quantity aggregation without double-counting. Reinforced careful join order and groupings.
 
 Key Takeaway: Each SQL technique was chosen not just to produce the metric but to add clarity, accuracy, and analytical depth, demonstrating practical SSMS expertise in real-world data.
 ---
